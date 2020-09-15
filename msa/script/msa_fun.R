@@ -71,3 +71,25 @@ PP_Meg_InpGen <- function(fasta_vector, prefix_file){
   return(input_list)
   
 }
+
+
+PP_AAbin_InpGen <- function(fasta_vector, prefix_file){
+  
+  input_list <- vector("list", 2)
+  
+  names(input_list) <- c("aabin", "PP")
+  
+  TDPalpha_aln <- msa::msa(fasta_vector, "ClustalOmega", type = "protein", verbose = T)
+  
+  # convert MSA to a seqinr msa
+  TDPalpha_aln_seqinr <- msaConvert(TDPalpha_aln, type = "ape::AAbin")
+  
+  input_list[["aabin"]] <- TDPalpha_aln_seqinr
+  input_list[["PP"]] <- TDPalpha_aln
+  
+  
+  return(input_list)
+  
+}
+
+
