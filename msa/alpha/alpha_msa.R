@@ -21,10 +21,7 @@ raw_files <- list.files(path = "data/TDP1_alpha_fasta/", pattern = "fasta")
 fasta_list <- NULL
 for (i in 1:length(raw_files)) {
   fasta_list[gsub(".fasta", "", raw_files[i])] <- seqinr::read.fasta(
-    file = paste0("data/TDP1_alpha_fasta/", 
-                  raw_files[i], 
-                  sep = ""
-                  ),
+    file = paste0("data/TDP1_alpha_fasta/", raw_files[i], sep = ""),
     seqtype = "AA", as.string = TRUE, set.attributes = T
   )
 }
@@ -58,14 +55,13 @@ write.fasta(as.list(TDPalpha_aln_seqinr$seq), names = TDPalpha_aln_seqinr$nam, f
 saveRDS(TDPalpha_aln_seqinr, file = "msa/alpha/TDP1alpha_msa.rds")
 
 # create image of alignment of representative species, this needs latex!
+# i have some problems with output=pdf which wuld be better
 
 alpha_prettyprint <- msa::msaPrettyPrint(TDPalpha_aln, file = "msa/alpha/TDP_alpha_aln.tex",
   subset = c(2, 85, 63, 77, 37, 71), # sig. species
   output = "tex", showNames = "left", showLogo = "top", logoColors = "rasmol",
   shadingMode = "similar", showConsensus = "bottom", showLegend = T, askForOverwrite = FALSE,
   furtherCode = c("\\defconsensus{.}{lower}{upper}", "\\showruler{1}{top}"))
-
-
 
 # Found it at the end of a code, is it useful???
 

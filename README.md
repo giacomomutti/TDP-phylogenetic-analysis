@@ -1,7 +1,10 @@
 # TDP phylogenetic analysis
 
-TODO: 
-1. define useful functions
-2. fix (?) msa -> change similarity matrix, remove "useless" sites, find ways to improve it
-3. merge/ concatenate the 2 proteins, duplications in tree
-4. Mr Bayes
+This repository contains scripts to reproduce the analysis.
+
+- **data/** contains fasta of protein sequences and an excel file with
+useful metadata
+- **msa/** contains script to produce MSAs
+- **trees/** has scripts to analyze output from MEGAX and visualizations
+- **Mrbayes/** has visual analysis of output from MrBAyes
+- **gsds-meme/** contains pictures obtained with gsds 2.0 and MEME 5.0.5
