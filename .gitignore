@@ -1,4 +1,11 @@
 .Rproj.user
-.Rhistory
+*.Rhistory
 .RData
 .Ruserdata
+*.tex
+/figures
+/SI
+*.Rproj
+*.pdf
+*synctec.gz
+/msa/remove_sp
