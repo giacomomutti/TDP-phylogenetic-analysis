@@ -7,5 +7,5 @@
 /SI
 *.Rproj
 *.pdf
-*synctec.gz
+*.synctec.gz
 /msa/remove_sp
